@@ -1,0 +1,180 @@
+
+
+.drawer_overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
+    overflow: hidden;
+    
+    .drawer {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        padding: 30px;
+        width: 420px;
+        right: 0;
+        height: 100%;
+        background: #FFFFFF;
+        box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+
+
+
+
+
+        .items {
+            flex: 1;
+            overflow: auto;
+
+            p{
+                margin: 0;
+                margin-bottom: 7px;
+            }
+        }
+
+
+        h2 {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            svg {
+                cursor: pointer;
+                transition: opacity 0.2s ease-in-out;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .cart_item {
+            display: flex;
+            align-items: center;
+            background: #FFFFFF;
+            border: 1px solid #F3F3F3;
+            border-radius: 20px;
+            overflow: hidden;
+            padding: 0 20px;
+            margin-bottom: 20px;
+
+
+
+            .cart_item_img {
+                height: 90px;
+                width: 110px;
+                background-size: contain;
+                background-position: 0 10px;
+                background-repeat: no-repeat;
+                margin-right: 20px;
+            }
+
+            svg {
+                cursor: pointer;
+                transition: opacity 0.2s ease-in-out;
+
+                &:hover {
+                    opacity: 1;
+                }
+
+                &:active {}
+            }
+
+
+        }
+
+        .cart-item_info {
+            margin-right: 20px;
+
+            p {
+                font-size: 14px;
+                margin: 0;
+            }
+
+            b {
+                font-size: 12px;
+            }
+
+
+        }
+
+        .total_wrapper {
+            padding: 0;
+
+            .total {
+                display: flex;
+                align-items: flex-end;
+                margin-bottom: 20px;
+
+
+                div {
+                    flex: 1;
+                    height: 1px;
+                    border-bottom: 1px dashed #DFDFDF;
+                    position: relative;
+                    top: -4px;
+                    margin: 0 10px;
+                }
+            }
+
+        }
+
+        .green_button {
+            position: relative;
+            width: 100%;
+            height: 55px;
+            background: #9DD558;
+            border-radius: 18px;
+            cursor: pointer;
+
+
+            border: none;
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                background: lighten(#9DD558, 5%);
+
+                img {
+                    right: 30px;
+                }
+            }
+
+            &:active {
+                background: darken(#9DD558, 5%);
+            }
+
+            img {
+
+                position: absolute;
+                right: 40px;
+                top: 21px;
+                transition: all 0.4s ease-in-out;
+
+
+            }
+        }
+    }
+    
+}
+
+.drawer_overlayVisible{
+    visibility: visible !important;
+    opacity: 1;
+    .drawer {
+        transform: translateX(0);
+    }
+}
+
+
